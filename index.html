@@ -1,238 +1,168 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Bering Sea</title>
+
 <style>
-body{
-  margin:0;
-}
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-  height:100%;
-  position:absolute;
-  bottom: 0;
-  border-top: 0;
-  border-left: 0;
-  margin-left:0;
-  margin-right:0;
-  background-color: transparent;
- table-layout: fixed;
-     text-align: center;
-}
-thead{
-  min-width: 100%;
-  min-height: 20%;
-    
-  right: 0;
-  top:0;
-  background-color: transparent;
-align-content: center;
-}
-    tbody{
-    table-layout: fixed;    
- width: 100%;
- height: 15%;
-  
-  
-  text-align: center;
-  align-content: center;
-  background-color: transparent;
-
-        
+    /* Reset + Body */
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        font-family: Arial, Helvetica, sans-serif;
+        background: black;
     }
-    
-    
- tfoot   
-    {
-  min-width: 100%;
-  min-height: 10%;
 
-  right: 0;
-  left:0;
-  bottom:0;
-  background-color: transparent;
-  align-content: center;
- text-align: center;
- vertical-align: bottom;
-}
-    
-#myVideo{
-      position: absolute;
-      z-index: -1;
-      top: 0;
-    bottom:0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    /* Background Video */
+    #myVideo {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
 
-}
+    /* Title */
+    .title {
+        text-align: center;
+        width: 100%;
+        color: black;
+        font-size: clamp(32px, 10vw, 100px);
+        font-weight: bold;
+        margin-top: 12vh;
+        text-shadow: 0 0 20px rgba(255,255,255,0.6);
+        letter-spacing: 1px;
+    }
 
+    /* Bottom menu wrapper */
+    .menu-bar {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        padding: 10px 0 20px;
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(5px);
+        display: flex;
+        justify-content: center;
+    }
 
+    /* Desktop layout: evenly spaced icons */
+    .menu {
+        display: flex;
+        gap: 35px;
+    }
 
-.stormchasers{
-font-size:8vw;
-font-weight:bold;
-font-family: Arial, Helvetica, sans-serif;
-color:black;
-line-height:82%;
-position: absolute;
-margin-top:12%;
-margin-left:15%;
-background-color: transparent;
+    /* Individual icon containers */
+    .menu-item {
+        text-align: center;
+        color: white;
+        font-size: clamp(12px, 2vw, 20px);
+    }
 
+    .menu-item p {
+        margin: 6px 0 0;
+        font-weight: bold;
+        text-shadow: 0 0 5px black;
+    }
 
-}
+    .menu-item img {
+        width: clamp(50px, 12vw, 130px);
+        height: auto;
+        transition: transform 0.25s ease-in-out;
+        cursor: pointer;
+    }
 
-.black{
+    .menu-item img:hover {
+        transform: scale(1.15);
+    }
 
- position:absolute;
- bottom:0;
- left:0;
- right:0;
- width:100%;
- background-color: transparent;
-
-}
- 
- .texty{
-  font-size: 3vw;
-  color:grey;
-  background-color:transparent;
-  line-height: .1vw;
-  font-family: Calibri, Arial, Helvetica;
-  text-align: center;
-
-}   
-    
-    
-    
+    /* Mobile: horizontal scroll */
+    @media (max-width: 700px) {
+        .menu {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 0 15px;
+            gap: 25px;
+        }
+        .menu::-webkit-scrollbar {
+            display: none;
+        }
+        .menu-item {
+            display: inline-block;
+        }
+    }
 </style>
-
-    
-    
-    
 </head>
-<body>
-   <div>
-        <video autoplay loop muted no-controls id="myVideo">
-        <source src="bering_sea_1.mp4" type="video/mp4">
-       </video>
-      
-    <div class="stormchasers" ><p>THE BERING SEA</p></div>
-   
-    
-<table>
-  <thead>
- <tr>
-<td>  </td>
- </tr>
- </thead> 
- 
- 
-    <tbody>  
-  <tr>
-      
-      
-    <td>
-       
-  
-    
-          </td>
-         
-          
-       </tr>   
-</tbody>  
-    
-  <tfoot>  
- <tr class="texty"; >
-      
-  <td style= "text-align: center;"> 
-     
-        <a href="matrix_1.html"target="_blank" > 
-            
-  <img onMouseOver="this.src='ALASKAN_CRAB_2.png';" width="150vw"  height="100vw"
-onMouseOut="this.src='ALASKAN_CRAB_1.png';" width="200vw"  height="150vw"
-src="ALASKAN_CRAB_1.png" alt="hover effect"  />
-        </a>  
-                <p>FISH</p>
-           
-             
-   
-       
-          </td>     
-   
-  <td style= "text-align: center;"> 
-      <a href="matrix_1.html"target="_blank"  >  
-          
-   <a href="matrix_1.html"target="_blank"  > 
-       
-   <img onMouseOver="this.src='opened_shell.png';" width="150vw"  height="50vw"
-onMouseOut="this.src='closed_shell.png';" width="150vw"  height="150vw"
-src="closed_shell.png" alt="hover effect"  />
-        </a> 
-              <p>TRAVEL</p>
-  
-      
-</td>
 
-   <td style= "text-align: center;">   
-       
-        <a href="matrix_1.html"target="_blank"  >   
-            
-   <img onMouseOver="this.src='ALASKAN_CRAB_2.png';" width="150vw"  height="100vw"
-onMouseOut="this.src='ALASKAN_CRAB_1.png';" width="200vw"  height="150vw"
-src="ALASKAN_CRAB_1.png" alt="hover effect"  />
-        </a>  
+<body>
+
+    <!-- Background Video -->
+    <video autoplay loop muted playsinline id="myVideo">
+        <source src="bering_sea_1.mp4" type="video/mp4">
+    </video>
+
+    <!-- Title -->
+    <div class="title">THE BERING SEA</div>
+
+    <!-- Bottom Menu -->
+    <div class="menu-bar">
+        <div class="menu">
+
+            <!-- FISH -->
+            <a href="matrix_1.html" target="_blank" class="menu-item">
+                <img src="ALASKAN_CRAB_1.png"
+                     onmouseover="this.src='ALASKAN_CRAB_2.png'"
+                     onmouseout="this.src='ALASKAN_CRAB_1.png'">
+                <p>FISH</p>
+            </a>
+
+            <!-- TRAVEL -->
+            <a href="matrix_1.html" target="_blank" class="menu-item">
+                <img src="closed_shell.png"
+                     onmouseover="this.src='opened_shell.png'"
+                     onmouseout="this.src='closed_shell.png'">
+                <p>TRAVEL</p>
+            </a>
+
+            <!-- WORK -->
+            <a href="matrix_1.html" target="_blank" class="menu-item">
+                <img src="ALASKAN_CRAB_1.png"
+                     onmouseover="this.src='ALASKAN_CRAB_2.png'"
+                     onmouseout="this.src='ALASKAN_CRAB_1.png'">
                 <p>WORK</p>
-  
-       
-  </td>  
-      <td style= "text-align: center;"> 
-          
-   <a href="matrix_1.html"target="_blank"  > 
-       
-   <img onMouseOver="this.src='opened_shell.png';" width="150vw"  height="50vw"
-onMouseOut="this.src='closed_shell.png';" width="150vw"  height="150vw"
-src="closed_shell.png" alt="hover effect"  />
-        </a>  
-              <p>DIVE</p>
-          
-    
-   </td>
-    <td style= "text-align: center;"> 
-        
-   <a href="matrix_1.html"target="_blank"  >       
-       
-   <img onMouseOver="this.src='ALASKAN_CRAB_2.png';" width="150vw"  height="100vw"
-onMouseOut="this.src='ALASKAN_CRAB_1.png';" width="200vw"  height="150vw"
-src="ALASKAN_CRAB_1.png" alt="hover effect"  />
-        </a> 
-         
-           <p>TRECK</p>   
-              
-   
-     </td>
-      <td style= "text-align: center;"> 
-          
-  <a href="matrix_1.html"target="_blank"  >   
-      
-   <img onMouseOver="this.src='opened_shell.png';" width="150vw"  height="50vw" onMouseOut="this.src='closed_shell.png';" width="150vw"  height="150vw"
-src="closed_shell.png" alt="hover effect"  /></a>
-          
-             <p>HISTORY</p>  
-          
-  
-          </td>
-    
-  
-          
-</tr>   
-  </tfoot> 
-</table>
-       
- </div>     
+            </a>
+
+            <!-- DIVE -->
+            <a href="matrix_1.html" target="_blank" class="menu-item">
+                <img src="closed_shell.png"
+                     onmouseover="this.src='opened_shell.png'"
+                     onmouseout="this.src='closed_shell.png'">
+                <p>DIVE</p>
+            </a>
+
+            <!-- TRECK -->
+            <a href="matrix_1.html" target="_blank" class="menu-item">
+                <img src="ALASKAN_CRAB_1.png"
+                     onmouseover="this.src='ALASKAN_CRAB_2.png'"
+                     onmouseout="this.src='ALASKAN_CRAB_1.png'">
+                <p>TRECK</p>
+            </a>
+
+            <!-- HISTORY -->
+            <a href="matrix_1.html" target="_blank" class="menu-item">
+                <img src="closed_shell.png"
+                     onmouseover="this.src='opened_shell.png'"
+                     onmouseout="this.src='closed_shell.png'">
+                <p>HISTORY</p>
+            </a>
+
+        </div>
+    </div>
+
 </body>
 </html>
